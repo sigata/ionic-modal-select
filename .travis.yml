@@ -3,3 +3,6 @@ node_js:
   - 6.9.2
 notifications:
   irc: 'irc.freenode.org#travis'
+before_script:
+  - npm install -g bower
+  - bower install
