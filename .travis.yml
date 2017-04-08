@@ -1,11 +1,12 @@
-language: node_js 
-
-# test on two node.js versions: 0.6 and 0.8
+language: node_js
 node_js:
-  - 0.6
-  - 0.8
-
-# configure notifications (email, IRC, campfire etc)
-# please update this section to your needs!
+  - 6.9.2
 notifications:
-  irc: "irc.freenode.org#travis"
+  irc: 'irc.freenode.org#travis'
+before_script:
+  - npm install -g bower
+  - bower install
+
+script:
+  - npm run lint
+  - npm test
